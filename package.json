@@ -1,0 +1,31 @@
+{
+  "name": "prograwebii26gpo55",
+  "version": "1.0.0",
+  "description": "Backend de node con mongo",
+  "keywords": [
+    "Backend",
+    "Mongo",
+    "FCFM"
+  ],
+  "homepage": "https://github.com/carlosmax3D/PrograWebII26Gpo55#readme",
+  "bugs": {
+    "url": "https://github.com/carlosmax3D/PrograWebII26Gpo55/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carlosmax3D/PrograWebII26Gpo55.git"
+  },
+  "license": "ISC",
+  "author": "Carlos Orta",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --env-file=.env.local server.js"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.1.6"
+  }
+}
