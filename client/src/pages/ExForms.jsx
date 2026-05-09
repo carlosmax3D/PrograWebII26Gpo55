@@ -7,8 +7,14 @@ import ControlledComponent from '../components/Form1';
 import Multiple from '../components/Form2';
 import Uncontrolled from '../components/Form3';
 import LoginForm from '../components/Form4';
+import { useAuth } from '../auth/AuthContext';
+import { Navigate } from "react-router-dom"
+
 function ExForms(props){
     const [sesion, setSesion] = useState('')
+    const { user } = useAuth();
+    if (!user)
+      return <Navigate to="/" replace/>
     return<>
     <Menu/>
     <h1>Ejemplo 7</h1>

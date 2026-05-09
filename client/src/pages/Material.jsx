@@ -8,6 +8,8 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import { useAuth } from "../auth/AuthContext";
+import { Navigate } from "react-router-dom"
 
 function FormDialog(props) {
   const [open, setOpen] = React.useState(false);
@@ -99,8 +101,12 @@ function MaterialPage(props){
         console.dir(value)
         setLogin(value)
     }
+    const { user } = useAuth();
+    if (!user)
+      return <Navigate to="/" replace />
     return <>
         <Menu/>
+        <h1> Hola { user.user }</h1>
         <br></br>
         <FormDialog funcion={saveUser}/>
         <BasicTextFields valor="Hola">

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Menu from './Menu'
+import { useAuth } from "../auth/AuthContext";
 
 function FunChild(props){
     const [dots, setDots] = useState("")
@@ -23,9 +24,13 @@ function FunComponent(props){
     const [count, setCount] = useState(0);
     const [data, setData] = useState(null);
     const incrementaCount = () => setCount(count+1)
+    const { user, login } = useAuth();
     useEffect(()=>{
         console.log("Montado");
-        setTimeout(()=>setData('Hola papu'),4000);
+        setTimeout(()=>{
+            setData('Hola papu')
+            login({"user": "Matilda"})
+        },4000);
     },[])
     return <>
     <Menu></Menu>
