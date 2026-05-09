@@ -1,6 +1,7 @@
 const express = require('express'); 
 const app = express(); 
 const port = process.env.PORT;
+const path = require("path")
 const usersRoute = require('./usersRoute');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -14,8 +15,9 @@ app.get(/.*test-gato*$/, function(req, res) {
 app.get('/api', (req, res) => {
   res.send('Hello World!')
 })
-app.get('/', (req, res) => {
-/// REDIRIGE AL FRONT
+app.use(express.static(path.join(__dirname, "client/dist")));
+app.get(/.*/, (req, res) => {
+  res.sendFile(path.join(__dirname, "client/dist/index.html"));
 })
 /*mongoose.connect(uri)
   .then(() => {
