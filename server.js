@@ -28,6 +28,8 @@ app.get('/', (req, res) => {
     console.error('Connection fail', error);
   });
 */
-app.listen(port, () => {
+/*app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
-});
+});*/
+
+export default app;
