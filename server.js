@@ -17,7 +17,7 @@ app.get('/api', (req, res) => {
 app.get('/', (req, res) => {
 /// REDIRIGE AL FRONT
 })
-mongoose.connect(uri)
+/*mongoose.connect(uri)
   .then(() => {
     console.log('Connection success');
     app.listen(port, () => {
@@ -27,3 +27,7 @@ mongoose.connect(uri)
   .catch(error => {
     console.error('Connection fail', error);
   });
+*/
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+});
